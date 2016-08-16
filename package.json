@@ -1,0 +1,15 @@
+{
+  "name": "clippy-bot",
+  "version": "1.0.0",
+  "description": "Clippy Slack Bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tyler Riker @tyriker",
+  "license": "ISC",
+  "dependencies": {
+    "botkit": "^0.2.2",
+    "cleverbot-node": "^0.2.2"
+  }
+}
