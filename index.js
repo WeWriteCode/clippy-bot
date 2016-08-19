@@ -42,8 +42,8 @@ controller.hears([CLIPPY], ['direct_mention', 'mention', 'ambient'], function (b
   responses.push('Do you want me to perform an unexpected reboot?');
   responses.push('Let me help you with that!');
   responses.push('Looks like you\'re using Slack! Let me help you with that!');
-  responses.push('Looks like your a person! Let me help you with that!');
-  responses.push('Looks like your typing! Let me help you with that! qwertyuiopasdfghjklzxcvbnm');
+  responses.push('Looks like you\'re a person! Let me help you with that!');
+  responses.push('Looks like you\'re typing! Let me help you with that! qwertyuiopasdfghjklzxcvbnm');
   responses.push('No');
   responses.push('Yes');
   responses.push('Yes?');
