@@ -55,11 +55,8 @@ controller.hears([CLIPPY], ['direct_mention', 'mention', 'ambient'], function (b
     var cleverbot = new Cleverbot();
     cleverbot.configure({botapi: "CC7hyVYymxe5PWCKijllWE2tdkg"});
     cleverbot.params.asbotname = 'Clippy';
-    cleverbot.write(cleverMessage, function (response) {
-      console.log(message, response.message);
-      cleverbot.write(message.text, function (response) {
-        bot.reply(message, response.message);
-      });
+    cleverbot.write(message.text, function (response) {
+      bot.reply(message, response.message);
     });
 
     // var cleverbot = new Cleverbot();
