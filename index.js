@@ -51,21 +51,14 @@ controller.hears([CLIPPY], ['direct_mention', 'mention', 'ambient'], function (b
 
 
   if (message.text.endsWith('?')) {
-
     var cleverbot = new Cleverbot();
     cleverbot.configure({botapi: "CC7hyVYymxe5PWCKijllWE2tdkg"});
     cleverbot.params.asbotname = 'Clippy';
-    cleverbot.write(message.text, function (response) {
-      bot.reply(message, response.message);
+    Cleverbot.prepare(function(){
+      cleverbot.write(message.text, function (response) {
+        bot.reply(message, response.message);
+      });
     });
-
-    // var cleverbot = new Cleverbot();
-    // cleverbot.params.asbotname = 'Clippy';
-    // Cleverbot.prepare(function(){
-    //   cleverbot.write(message.text, function (response) {
-    //     bot.reply(message, response.message);
-    //   });
-    // });
   } else {
     bot.reply(message, responses[Math.floor(Math.random() * responses.length)]);
   }
