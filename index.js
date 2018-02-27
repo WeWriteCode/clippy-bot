@@ -9,7 +9,7 @@ var bot = controller.spawn({token: process.env.token});
 
 var Cleverbot = require('cleverbot-node');
 
-var wwc_office_channel = 'C3QSEE9RR';
+var wwc_office_channel = 'G0K5B190S';
 var slackbot_user = 'USLACKBOT';
 var CLIPPY = 'clippy';
 
