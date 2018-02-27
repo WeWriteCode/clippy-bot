@@ -9,7 +9,7 @@ var bot = controller.spawn({token: process.env.token});
 
 var Cleverbot = require('cleverbot-node');
 
-var wwc_office_channel = 'G0K5B190S';
+var wwc_office_channel = 'C3QSEE9RR';
 var slackbot_user = 'USLACKBOT';
 var CLIPPY = 'clippy';
 
@@ -51,14 +51,20 @@ controller.hears([CLIPPY], ['direct_mention', 'mention', 'ambient'], function (b
 
 
   if (message.text.endsWith('?')) {
-    var cleverbot = new Cleverbot();
+
+    cleverbot = new Cleverbot();
     cleverbot.configure({botapi: "CC7hyVYymxe5PWCKijllWE2tdkg"});
-    cleverbot.params.asbotname = 'Clippy';
-    Cleverbot.prepare(function(){
-      cleverbot.write(message.text, function (response) {
-        bot.reply(message, response.message);
-      });
+    cleverbot.write(message.text, function (response) {
+       bot.reply(message, response.message);
     });
+
+    // var cleverbot = new Cleverbot();
+    // cleverbot.params.asbotname = 'Clippy';
+    // Cleverbot.prepare(function(){
+    //   cleverbot.write(message.text, function (response) {
+    //     bot.reply(message, response.message);
+    //   });
+    // });
   } else {
     bot.reply(message, responses[Math.floor(Math.random() * responses.length)]);
   }
