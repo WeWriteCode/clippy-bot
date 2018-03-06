@@ -9,7 +9,9 @@ var bot = controller.spawn({token: process.env.token});
 
 var Cleverbot = require('cleverbot-node');
 
-var wwc_office_channel = 'G0K5B190S';
+var wwc_office_channel = 'C3QSEE9RR'; // bot_testing
+
+// var wwc_office_channel = 'G0K5B190S'; // www_office
 var slackbot_user = 'USLACKBOT';
 var CLIPPY = 'clippy';
 
@@ -102,4 +104,141 @@ controller.on('direct_message', function (bot, message) {
     channel: wwc_office_channel,
     text: message.text
   });
+});
+
+// positive clippy
+controller.hears(["New Patreon Pledge"], ['ambient'], function (bot, message) {
+  var responses = [];
+
+  responses.push('That’s Incredible');
+  responses.push('How Extraordinary!');
+  responses.push('Far Out!');
+  responses.push('Great!');
+  responses.push('Outstanding');
+  responses.push('Performance');
+  responses.push('Marvelous');
+  responses.push('I Can’t Get Over It!');
+  responses.push('Wonderful!');
+  responses.push('Amazing Effort!');
+  responses.push('Unbelievable Work');
+  responses.push('You Should Be');
+  responses.push('Proud');
+  responses.push('Phenomenal!');
+  responses.push('You’ve Got It');
+  responses.push('Superb!');
+  responses.push('You’re Special');
+  responses.push('Excellent!');
+  responses.push('Cool!');
+  responses.push('Your Project Is First');
+  responses.push('Rate!');
+  responses.push('Way to Go!');
+  responses.push('You’ve Outdone');
+  responses.push('Yourself');
+  responses.push('Thumbs Up');
+  responses.push('What A Great');
+  responses.push('Listener');
+  responses.push('Your Help Counts!');
+  responses.push('You Came Through!');
+  responses.push('Terrific');
+  responses.push('You Tried Hard');
+  responses.push('You’re OK');
+  responses.push('Fabulous');
+  responses.push('You Made It');
+  responses.push('Happen');
+  responses.push('You’re a Real');
+  responses.push('Trooper');
+  responses.push('It Couldn’t Be');
+  responses.push('Better');
+  responses.push('The Time You Put in');
+  responses.push('Shows');
+  responses.push('Bravo!');
+  responses.push('You’re Unique');
+  responses.push('Exceptional');
+  responses.push('Fantastic Work');
+  responses.push('Breathtaking!');
+  responses.push('You’re a Great');
+  responses.push('Example For Others');
+  responses.push('Keep Up the Good');
+  responses.push('Work');
+  responses.push('Awesome!');
+  responses.push('I Knew You Had It In');
+  responses.push('You');
+  responses.push('You’ve Made');
+  responses.push('Progress');
+  responses.push('Your Work Is Out of');
+  responses.push('Sight');
+  responses.push('What an');
+  responses.push('Imagination!');
+  responses.push('It’s Everything I');
+  responses.push('Hoped For');
+  responses.push('Stupendous');
+  responses.push('You’re Sensational');
+  responses.push('Very Good!');
+  responses.push('Thanks for Caring');
+  responses.push('What a Genius!');
+  responses.push('You Made The');
+  responses.push('Difference');
+  responses.push('Good For You');
+  responses.push('A+ Work');
+  responses.push('Take a Bow');
+  responses.push('Super Job');
+  responses.push('How Thoughtful of');
+  responses.push('You');
+  responses.push('Nice Going');
+  responses.push('Class Act');
+  responses.push('Well Done');
+  responses.push('You’re Inspiring');
+  responses.push('How Artistic');
+  responses.push('You Go the Extra');
+  responses.push('Mile');
+  responses.push('Hooray for You');
+  responses.push('You’re a Joy');
+  responses.push('You’re a Shining');
+  responses.push('Star');
+  responses.push('You’re Amazing');
+  responses.push('What a Great Idea');
+  responses.push('Great Answer');
+  responses.push('Extra-Special Work');
+  responses.push('You Deserve a Hug');
+  responses.push('You’re Getting');
+  responses.push('Better');
+  responses.push('You’re Tops');
+  responses.push('You’re Catching On');
+  responses.push('You’ve Got What It');
+  responses.push('Takes');
+  responses.push('You’re Neat');
+  responses.push('Spectacular Work');
+  responses.push('You’re #1');
+  responses.push('Remarkable');
+  responses.push('You’re a Winner');
+  responses.push('Beautiful');
+  responses.push('Clever');
+  responses.push('You’re So Kind');
+  responses.push('Wow!');
+  responses.push('Magnificent!');
+  responses.push('You’re Sharp');
+  responses.push('Great Discovery');
+  responses.push('You’re Very');
+  responses.push('Responsible');
+  responses.push('Brilliant');
+  responses.push('Thanks for Helping');
+  responses.push('You’ve Earned My');
+  responses.push('Respect');
+  responses.push('You’re a Pleasure to');
+  responses.push('Know');
+  responses.push('You’re Very');
+  responses.push('Talented');
+  responses.push('How Original');
+  responses.push('Very Brave');
+  responses.push('Congratulations!');
+  responses.push('You’re a Champ');
+  responses.push('You’re Super');
+  responses.push('You Figured It Out');
+  responses.push('Right On!');
+  responses.push('You Make Me Smile');
+  responses.push('You’re the');
+  responses.push('Greatest!');
+
+  bot.reply(message, responses[Math.floor(Math.random() * responses.length)]);
+  
 });
