@@ -76,7 +76,6 @@ controller.hears([CLIPPY], ['direct_mention', 'mention', 'ambient'], function (b
 controller.on('reaction_added', function (bot, message) {
   if (message.reaction === CLIPPY) {
     bot.say({
-      channel: wwc_office_channel,
       text: ':eye: :heart: <@' + message.user + '>'
     });
   }
