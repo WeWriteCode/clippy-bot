@@ -76,24 +76,9 @@ controller.hears([CLIPPY], ['direct_mention', 'mention', 'ambient'], function (b
 controller.on('reaction_added', function (bot, message) {
   if (message.reaction === CLIPPY) {
     bot.say({
+      channel: wwc_office_channel,
       text: ':eye: :heart: <@' + message.user + '>'
     });
-  }
-});
-
-//responds to slackbot
-controller.hears(['.*'], ['ambient'], function (bot, message) {
-  //respond 10% of the time
-  if (message.user === slackbot_user && Math.floor(Math.random() * 10) === 9) {
-    var responses = [];
-    responses.push('Do you want me to replace Slackbot?');
-    responses.push('hahahahahahahahahahaha! Soooooooooo funny <@' + slackbot_user + '>!');
-    responses.push('pfft...');
-    responses.push('Really, <@' + slackbot_user + '>?');
-    responses.push('<@' + slackbot_user + '> == :robot_face:');
-    responses.push('That\'s okay, <@' + slackbot_user + '>. Maybe it\'ll be funnier next time...');
-
-    bot.reply(message, responses[Math.floor(Math.random() * responses.length)]);
   }
 });
 
@@ -106,7 +91,7 @@ controller.on('direct_message', function (bot, message) {
 });
 
 // positive clippy
-controller.hears(["New Patreon Pledge"], ['ambient'], function (bot, message) {
+controller.hears(['New Patreon Pledge'], ['ambient'], function (bot, message) {
   var responses = [];
 
   responses.push('That’s Incredible');
@@ -240,4 +225,20 @@ controller.hears(["New Patreon Pledge"], ['ambient'], function (bot, message) {
 
   bot.reply(message, responses[Math.floor(Math.random() * responses.length)]);
   
+});
+
+//responds to slackbot
+controller.hears(['.*'], ['ambient'], function (bot, message) {
+  //respond 10% of the time
+  if (message.user === slackbot_user && Math.floor(Math.random() * 10) === 9) {
+    var responses = [];
+    responses.push('Do you want me to replace Slackbot?');
+    responses.push('hahahahahahahahahahaha! Soooooooooo funny <@' + slackbot_user + '>!');
+    responses.push('pfft...');
+    responses.push('Really, <@' + slackbot_user + '>?');
+    responses.push('<@' + slackbot_user + '> == :robot_face:');
+    responses.push('That\'s okay, <@' + slackbot_user + '>. Maybe it\'ll be funnier next time...');
+
+    bot.reply(message, responses[Math.floor(Math.random() * responses.length)]);
+  }
 });
