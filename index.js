@@ -11,7 +11,7 @@ var Cleverbot = require('cleverbot-node');
 
 // var wwc_office_channel = 'C3QSEE9RR'; // bot_testing
 
-var wwc_office_channel = 'G0K5B190S'; // www_office
+var wwc_office_channel = 'GAMN14X2P'; // teachout
 var slackbot_user = 'USLACKBOT';
 var CLIPPY = 'clippy';
 
@@ -224,7 +224,7 @@ controller.hears(['New Patreon Pledge'], ['ambient'], function (bot, message) {
   responses.push('Greatest!');
 
   bot.reply(message, responses[Math.floor(Math.random() * responses.length)]);
-  
+
 });
 
 //responds to slackbot
